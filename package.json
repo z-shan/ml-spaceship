@@ -1,17 +1,16 @@
 {
-  "name": "psadmin",
+  "name": "MagicLeap SpaceShip",
   "version": "1.0.0",
-  "description": "",
+  "description": "Watto's Spaceship Emporium",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Cory House",
+  "author": "Zeeshan Ahmed",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^3.3.5",
     "browserify": "^10.2.4",
-    "flux": "^2.0.3",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
