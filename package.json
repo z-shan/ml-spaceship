@@ -19,7 +19,9 @@
     "gulp-open": "^0.3.2",
     "jquery": "^2.1.4",
     "lodash": "^4.17.4",
-    "react": "^0.13.3",
+    "react": "^0.14.9",
+    "react-dom": "^0.14.9",
+    "react-modal-bootstrap": "^1.1.1",
     "react-router": "^0.13.3",
     "reactify": "^1.1.1",
     "vinyl-source-stream": "^1.1.0"
