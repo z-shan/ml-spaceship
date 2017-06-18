@@ -316,3 +316,7 @@ body {
 div.container-fluid {
   padding : 0;
 }
+
+div.modal {
+  color: black;
+}
