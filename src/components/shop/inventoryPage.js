@@ -3,12 +3,12 @@
 var React = require('react');
 var InventoryList = require('./inventoryList');
 var SpaceShip = require('./spaceShipModal');
+var bootstrap = require('bootstrap');
 
 var InventoryPage = React.createClass({
     
     showModal: function(e) {
         this.setState({selectedship: e});
-        console.log(this);
         $(this.refs.modal.getDOMNode()).modal('show');
     },
 
@@ -25,11 +25,13 @@ var InventoryPage = React.createClass({
     render: function() {
         return (
             <div>
-                <h1>Inventory</h1>
-                <InventoryList 
-                    inventory={this.props.inventory}
-                    showDetails={this.showModal} />
-                <SpaceShip ref="modal" selectedship={this.state.selectedship} hideModal={this.hideModal}/>
+                <h1 style={{"text-align": "center"}}>Inventory</h1>
+                <div className="inventory-page">
+                    <InventoryList 
+                        inventory={this.props.inventory}
+                        showDetails={this.showModal} />
+                    <SpaceShip ref="modal" selectedship={this.state.selectedship} hideModal={this.hideModal}/>
+                </div>
             </div>
         );
     }

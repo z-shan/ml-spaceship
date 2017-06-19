@@ -6,5 +6,5 @@ var Router = require('react-router');
 var routes = require('./routes');
 
 Router.run(routes, Router.HistoryLocation, function(Handler) {
-    ReactDOM.render(<Handler />, document.getElementById('page-top'));
+    ReactDOM.render(<Handler />, document.getElementById('app'));
 });

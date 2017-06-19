@@ -1,4 +1,4 @@
-/*eslint-disable strict */ // Disabling check because we cant run strict mode. Need global vars.
+/*eslint-disable strict */
 
 var React = require('react');
 var Header = require('./common/header');

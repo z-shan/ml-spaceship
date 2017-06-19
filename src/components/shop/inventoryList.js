@@ -9,29 +9,52 @@ var InventoryList = React.createClass({
     },
 
     render: function() {
-        var createSpaceShipRow = function(spaceship) {
-            return (
-                <tr key={spaceship.name.replace(/\s/g, '')}>
-                    {/**<td><Link to={"/spaceship/" + spaceship.name.replace(/\s/g, '')}>{spaceship.name}</Link></td>**/}
-                    <td><a onClick={this.props.showDetails.bind(this, spaceship)}>{spaceship.name}</a></td>
-                    <td>{spaceship.price}</td>
-                </tr>
-            );
-        };
+        var ships = [];
+
+        for(var i = 0; i < this.props.inventory.length; i++) {
+            var spaceship1 = this.props.inventory[i];
+            spaceship1.image = "images/ss-" + (i % 8) + ".jpg";
+
+            if(this.props.inventory[i + 1]) {
+                var spaceship2 = this.props.inventory[i + 1];
+                spaceship2.image = "images/ss-" + ((i + 1) % 8) + ".jpg";
+
+                ships.push(
+                    <div className="row text-center">
+                        <div key={spaceship1.name.replace(/\s/g, '') + i} 
+                            className="ship col-md-4 well col-centered"
+                            onClick={this.props.showDetails.bind(this, spaceship1)}>
+                            <div><img className="photoicon" src={spaceship1.image}/></div>
+                            <div className="text-uppercase">{spaceship1.name}</div>
+                        </div>
+                        <div key={spaceship2.name.replace(/\s/g, '') + (i + 1)} 
+                            className="ship col-md-4 well col-md-offset-1 col-centered"
+                            onClick={this.props.showDetails.bind(this, spaceship2)}>
+                            <div><img className="photoicon" src={spaceship2.image}/></div>
+                            <div className="text-uppercase">{spaceship2.name}</div>
+                        </div>
+                    </div>
+                );
+                i++;
+            } else {
+                ships.push(
+                    <div className="row text-center">
+                        <div key={spaceship1.name.replace(/\s/g, '') + i} 
+                            className="ship col-md-4 well col-centered"
+                            onClick={this.props.showDetails.bind(this, spaceship1)}>
+                            <div><img className="photoicon" src={spaceship1.image}/></div>
+                            <div className="text-uppercase">{spaceship1.name}</div>
+                        </div>
+                    </div>
+                );
+            }
+            
+        }
 
         return (
-            <div>
-                <table className="table">
-                    <thead>
-                        <th>Name</th>
-                        <th>Price</th>    
-                    </thead>
-                    <tbody>
-                        {this.props.inventory.map(createSpaceShipRow, this)}
-                    </tbody>
-                </table>
+            <div class="row table-row text-center">
+                {ships}
             </div>
-
         );
     }
 });

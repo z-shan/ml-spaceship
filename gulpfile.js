@@ -24,8 +24,7 @@ var config = {
     	],
 		fonts: 'node_modules/font-awesome/fonts/**',
 		dist: './dist',
-		mainJs: './src/main.js',
-		bootstrapjs: './node_modules/bootstrap/dist/js/bootstrap.min.js'
+		mainJs: './src/main.js'
 	}
 }
 
@@ -60,12 +59,6 @@ gulp.task('js', function() {
 		.pipe(connect.reload());
 });
 
-gulp.task('copybootjs', function() {
-	gulp.src(config.paths.bootstrapjs)
-		.pipe(gulp.dest(config.paths.dist + '/scripts'))
-		.pipe(connect.reload());
-});
-
 gulp.task('css', function() {
 	gulp.src(config.paths.css)
 		.pipe(concat('bundle.css'))
@@ -73,7 +66,6 @@ gulp.task('css', function() {
 });
 
 // Migrates images to dist folder
-// Note that I could even optimize my images here
 gulp.task('images', function () {
     gulp.src(config.paths.images)
         .pipe(gulp.dest(config.paths.dist + '/images'))
@@ -97,4 +89,4 @@ gulp.task('watch', function() {
 	gulp.watch(config.paths.js, ['js', 'lint']);
 });
 
-gulp.task('default', ['html', 'js', 'copybootjs', 'css', 'images', 'fonts', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'images', 'fonts', 'lint', 'open', 'watch']);
