@@ -6,10 +6,16 @@ nodejs  > 4
 Developed on 7.1.0
 Tested on 4.7.3 and 7.1.0
 
+Browser Support
+Developed and Tested on
+Firefox 52.2 
+Chrome 58.0
+
 ## Run
 ````
-1. npm install
-2. Gulp
+1. git clone https://z-shan@bitbucket.org/z-shan/magicleap-spaceship.git
+2. npm install
+3. Gulp
 ````
 
 ## Components
