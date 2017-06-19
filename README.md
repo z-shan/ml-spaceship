@@ -14,9 +14,10 @@ Chrome 58.0
 ## Run
 ````
 1. git clone https://z-shan@bitbucket.org/z-shan/magicleap-spaceship.git
-2. npm install
-3. Gulp
-4. goto localhost:9006 on your browser (port can be configured in gulpfile.js)
+2. cd into magicleap-spaceship folder
+3. npm install
+4. Gulp
+5. goto localhost:9006 on your browser (port can be configured in gulpfile.js)
 ````
 
 ## Components
