@@ -20,6 +20,7 @@ var ModalBody = React.createClass({
                         <div className="productdetails col-sm-12 col-md-12 col-lg-12">
                             <div><strong>Name :</strong> {this.props.selectedship.name}</div>
                             <div><strong>Manufacturer :</strong> {this.props.selectedship.manufacturer}</div>
+                            <div><strong>Class :</strong> {this.props.selectedship.class}</div>
                             <div><strong>Price :</strong> {!this.props.selectedship.price ? 'N/A - Contact Sales for pricing' : this.props.selectedship.price}</div>
                         </div>
                     </div>
